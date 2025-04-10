@@ -39,6 +39,9 @@ class Simulation(object):
 		return all_colors
 
 	def sense(self):
+		#print("type(beliefs):", type(self.beliefs))
+		#print("type(beliefs[0]):", type(self.beliefs[0]))
+
 		color = self.get_observed_color()
 		beliefs = deepcopy(self.beliefs)
 		new_beliefs = localizer.sense(color, self.grid, beliefs, self.p_hit, self.p_miss)
